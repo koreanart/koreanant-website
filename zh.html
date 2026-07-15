@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KOREAN ART｜京都古美术、陶瓷器与茶道具画廊</title>
+  <meta name="description" content="株式会社 KOREAN ART 位于京都，主要经营古美术、陶瓷器、茶道具、挂轴、绘画以及近现代艺术。" />
+  <style>
+
+  :root {
+    --black:#111;
+    --white:#fff;
+    --gray:#666;
+    --light:#f6f4ef;
+    --gold:#b79a5b;
+    --line:#ddd;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", "Times New Roman", serif;
+    color: var(--black);
+    background: var(--white);
+    line-height: 1.8;
+  }
+  a { color: inherit; text-decoration: none; }
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    background: rgba(255,255,255,.92);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(8px);
+  }
+  .nav {
+    max-width: 1180px;
+    margin: auto;
+    padding: 14px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  .logo {
+    font-size: 22px;
+    letter-spacing: .12em;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+  }
+  .menu {
+    display: flex;
+    gap: 24px;
+    font-size: 14px;
+    letter-spacing: .08em;
+  }
+  .languages {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: .04em;
+    white-space: nowrap;
+  }
+  .languages a {
+    color: #777;
+  }
+  .languages a.active {
+    color: var(--black);
+    font-weight: 700;
+  }
+  .languages .divider {
+    color: #bbb;
+  }
+  .hero {
+    min-height: 100vh;
+    background:
+      linear-gradient(rgba(0,0,0,.32), rgba(0,0,0,.32)),
+      url("assets/gallery.jpg") center/cover no-repeat;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 120px 22px 70px;
+  }
+  .hero-inner {
+    max-width: 1180px;
+    width: 100%;
+    margin: auto;
+  }
+  .hero h1 {
+    font-size: clamp(54px, 9vw, 118px);
+    line-height: .95;
+    letter-spacing: .08em;
+    margin: 0 0 28px;
+  }
+  .hero p {
+    font-size: clamp(16px, 2vw, 24px);
+    letter-spacing: .12em;
+    margin-bottom: 36px;
+  }
+  .btn {
+    display: inline-block;
+    border: 1px solid currentColor;
+    padding: 12px 28px;
+    letter-spacing: .12em;
+    font-size: 13px;
+  }
+  section {
+    padding: 96px 22px;
+  }
+  .wrap {
+    max-width: 1180px;
+    margin: auto;
+  }
+  .section-title {
+    font-size: 36px;
+    letter-spacing: .08em;
+    margin: 0 0 14px;
+  }
+  .sub {
+    color: var(--gray);
+    margin: 0 0 44px;
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .about-grid img,
+  .access-img {
+    width: 100%;
+    border-radius: 2px;
+    display: block;
+  }
+  .collections {
+    background: var(--light);
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+  .card {
+    background: white;
+    border: 1px solid var(--line);
+    padding: 36px 22px;
+    min-height: 160px;
+  }
+  .card h3 {
+    margin: 0 0 16px;
+    font-size: 24px;
+  }
+  .access-grid {
+    display: grid;
+    grid-template-columns: 1.35fr .9fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .info-box {
+    border-top: 1px solid var(--black);
+    border-bottom: 1px solid var(--line);
+    padding: 28px 0;
+  }
+  .info-box h3 {
+    margin: 0 0 18px;
+    font-size: 28px;
+    letter-spacing: .08em;
+  }
+  .route {
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+  footer {
+    background: #111;
+    color: white;
+    padding: 52px 22px;
+  }
+  footer .wrap {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  .small {
+    color: #aaa;
+    font-size: 13px;
+  }
+  @media (max-width: 900px) {
+    .nav { align-items: flex-start; }
+    .nav-right { flex-direction: column-reverse; align-items: flex-end; gap: 6px; }
+    .menu { gap: 14px; font-size: 12px; }
+  }
+  @media (max-width: 800px) {
+    .menu { display: none; }
+    .nav { padding: 12px 18px; }
+    .languages { font-size: 11px; gap: 6px; }
+    .about-grid,
+    .access-grid,
+    .route {
+      grid-template-columns: 1fr;
+    }
+    .cards {
+      grid-template-columns: 1fr 1fr;
+    }
+    section { padding: 70px 18px; }
+  }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="logo" href="zh.html">KOREAN ART</a>
+      <div class="nav-right">
+        <nav class="menu">
+          <a href="#about">公司介绍</a>
+          <a href="#collection">艺术品展示</a>
+          <a href="#access">交通方式</a>
+          <a href="#contact">联系我们</a>
+        </nav>
+        <div class="languages" aria-label="Language selection">
+          <a href="index.html">日本語</a><span class="divider">|</span><a href="en.html">EN</a><span class="divider">|</span><a class="active" href="zh.html">中文</a><span class="divider">|</span><a href="ko.html">한국어</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>KOREAN<br>ART</h1>
+        <p>古美术・陶瓷器・茶道具・挂轴・绘画・近现代艺术</p>
+        <a class="btn" href="#collection">VIEW COLLECTION →</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap about-grid">
+        <div>
+          <h2 class="section-title">About</h2>
+          <p class="sub">以京都为据点，介绍韩国美术与东亚艺术之美的画廊。</p>
+          <p>株式会社 KOREAN ART 主要经营古美术、古陶瓷器、茶道具、挂轴、绘画以及近现代艺术。<br>我们细致传达每件作品的魅力，为日本及海外客户提供值得信赖的艺术体验。</p>
+        </div>
+        <img src="assets/gallery.jpg" alt="KOREAN ART gallery interior">
+      </div>
+    </section>
+
+    <section id="collection" class="collections">
+      <div class="wrap">
+        <h2 class="section-title">Collection</h2>
+        <p class="sub">主要经营领域</p>
+        <div class="cards">
+          <div class="card"><h3>陶瓷器</h3><p>古陶瓷器、高丽青瓷、白瓷等</p></div>
+          <div class="card"><h3>茶道具</h3><p>茶碗、香盒、花器等</p></div>
+          <div class="card"><h3>挂轴・绘画</h3><p>书画、近代绘画、东洋美术</p></div>
+          <div class="card"><h3>现代艺术</h3><p>近现代作品与收藏</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="access">
+      <div class="wrap">
+        <h2 class="section-title">Access</h2>
+        <p class="sub">从九条站3号出口步行约8分钟</p>
+        <div class="access-grid">
+          <img class="access-img" src="assets/access-kujo.jpg" alt="从九条站到KOREAN ART的地图">
+          <div class="info-box">
+            <h3>株式会社 KOREAN ART</h3>
+            <p>〒601-8023<br>京都府京都市南区東九条南松ノ木町24</p>
+            <p>京都市营地铁乌丸线<br>从九条站3号出口步行约8分钟</p>
+            <p>TEL：075-276-8189<br>MAIL：kabushikikaisyakoreanart@gmail.com</p>
+          </div>
+        </div>
+
+        <div class="route">
+          <div>
+            <h3>从京都站前往</h3>
+            <p>京都站 → 地铁乌丸线（竹田方向）约2分钟 → 九条站 → 步行约8分钟</p>
+          </div>
+          <div>
+            <h3>从关西国际机场前往</h3>
+            <p>关西国际机场 → JR关空特急 HARUKA 约75分钟 → 京都站 → 九条站 → 步行约8分钟</p>
+          </div>
+        </div>
+
+        <div style="margin-top:40px;">
+          <img class="access-img" src="assets/access-kyoto-kix.jpg" alt="从京都站和关西国际机场前往KOREAN ART的交通方式">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="wrap">
+      <div>
+        <div class="logo">KOREAN ART</div>
+        <p>株式会社 KOREAN ART</p>
+      </div>
+      <div>
+        <p>京都府京都市南区東九条南松ノ木町24</p>
+        <p>TEL：075-276-8189</p>
+        <p>MAIL：kabushikikaisyakoreanart@gmail.com</p>
+      </div>
+      <p class="small">Copyright © KOREAN ART. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

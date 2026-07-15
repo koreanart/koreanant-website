@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KOREAN ART｜교토 고미술·도자기·다도구 갤러리</title>
+  <meta name="description" content="주식회사 KOREAN ART는 교토를 거점으로 고미술, 도자기, 다도구, 족자, 회화, 근현대 미술을 취급하는 갤러리입니다." />
+  <style>
+
+  :root {
+    --black:#111;
+    --white:#fff;
+    --gray:#666;
+    --light:#f6f4ef;
+    --gold:#b79a5b;
+    --line:#ddd;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", "Times New Roman", serif;
+    color: var(--black);
+    background: var(--white);
+    line-height: 1.8;
+  }
+  a { color: inherit; text-decoration: none; }
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    background: rgba(255,255,255,.92);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(8px);
+  }
+  .nav {
+    max-width: 1180px;
+    margin: auto;
+    padding: 14px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  .logo {
+    font-size: 22px;
+    letter-spacing: .12em;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+  }
+  .menu {
+    display: flex;
+    gap: 24px;
+    font-size: 14px;
+    letter-spacing: .08em;
+  }
+  .languages {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: .04em;
+    white-space: nowrap;
+  }
+  .languages a {
+    color: #777;
+  }
+  .languages a.active {
+    color: var(--black);
+    font-weight: 700;
+  }
+  .languages .divider {
+    color: #bbb;
+  }
+  .hero {
+    min-height: 100vh;
+    background:
+      linear-gradient(rgba(0,0,0,.32), rgba(0,0,0,.32)),
+      url("assets/gallery.jpg") center/cover no-repeat;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 120px 22px 70px;
+  }
+  .hero-inner {
+    max-width: 1180px;
+    width: 100%;
+    margin: auto;
+  }
+  .hero h1 {
+    font-size: clamp(54px, 9vw, 118px);
+    line-height: .95;
+    letter-spacing: .08em;
+    margin: 0 0 28px;
+  }
+  .hero p {
+    font-size: clamp(16px, 2vw, 24px);
+    letter-spacing: .12em;
+    margin-bottom: 36px;
+  }
+  .btn {
+    display: inline-block;
+    border: 1px solid currentColor;
+    padding: 12px 28px;
+    letter-spacing: .12em;
+    font-size: 13px;
+  }
+  section {
+    padding: 96px 22px;
+  }
+  .wrap {
+    max-width: 1180px;
+    margin: auto;
+  }
+  .section-title {
+    font-size: 36px;
+    letter-spacing: .08em;
+    margin: 0 0 14px;
+  }
+  .sub {
+    color: var(--gray);
+    margin: 0 0 44px;
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .about-grid img,
+  .access-img {
+    width: 100%;
+    border-radius: 2px;
+    display: block;
+  }
+  .collections {
+    background: var(--light);
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+  .card {
+    background: white;
+    border: 1px solid var(--line);
+    padding: 36px 22px;
+    min-height: 160px;
+  }
+  .card h3 {
+    margin: 0 0 16px;
+    font-size: 24px;
+  }
+  .access-grid {
+    display: grid;
+    grid-template-columns: 1.35fr .9fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .info-box {
+    border-top: 1px solid var(--black);
+    border-bottom: 1px solid var(--line);
+    padding: 28px 0;
+  }
+  .info-box h3 {
+    margin: 0 0 18px;
+    font-size: 28px;
+    letter-spacing: .08em;
+  }
+  .route {
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+  footer {
+    background: #111;
+    color: white;
+    padding: 52px 22px;
+  }
+  footer .wrap {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  .small {
+    color: #aaa;
+    font-size: 13px;
+  }
+  @media (max-width: 900px) {
+    .nav { align-items: flex-start; }
+    .nav-right { flex-direction: column-reverse; align-items: flex-end; gap: 6px; }
+    .menu { gap: 14px; font-size: 12px; }
+  }
+  @media (max-width: 800px) {
+    .menu { display: none; }
+    .nav { padding: 12px 18px; }
+    .languages { font-size: 11px; gap: 6px; }
+    .about-grid,
+    .access-grid,
+    .route {
+      grid-template-columns: 1fr;
+    }
+    .cards {
+      grid-template-columns: 1fr 1fr;
+    }
+    section { padding: 70px 18px; }
+  }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="logo" href="ko.html">KOREAN ART</a>
+      <div class="nav-right">
+        <nav class="menu">
+          <a href="#about">회사 소개</a>
+          <a href="#collection">작품 안내</a>
+          <a href="#access">오시는 길</a>
+          <a href="#contact">문의</a>
+        </nav>
+        <div class="languages" aria-label="Language selection">
+          <a href="index.html">日本語</a><span class="divider">|</span><a href="en.html">EN</a><span class="divider">|</span><a href="zh.html">中文</a><span class="divider">|</span><a class="active" href="ko.html">한국어</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>KOREAN<br>ART</h1>
+        <p>고미술・도자기・다도구・족자・회화・근현대 미술</p>
+        <a class="btn" href="#collection">VIEW COLLECTION →</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap about-grid">
+        <div>
+          <h2 class="section-title">About</h2>
+          <p class="sub">교토를 거점으로 한국 미술과 동아시아의 아름다움을 소개하는 갤러리입니다.</p>
+          <p>주식회사 KOREAN ART는 고미술, 고도자기, 다도구, 족자, 회화, 근현대 미술을 중심으로 취급하고 있습니다.<br>작품의 매력을 정성스럽게 전하고, 일본 국내외 고객에게 신뢰할 수 있는 미술 경험을 제공합니다.</p>
+        </div>
+        <img src="assets/gallery.jpg" alt="KOREAN ART gallery interior">
+      </div>
+    </section>
+
+    <section id="collection" class="collections">
+      <div class="wrap">
+        <h2 class="section-title">Collection</h2>
+        <p class="sub">주요 취급 분야</p>
+        <div class="cards">
+          <div class="card"><h3>도자기</h3><p>고도자기, 고려청자, 백자 등</p></div>
+          <div class="card"><h3>다도구</h3><p>다완, 향합, 화입 등</p></div>
+          <div class="card"><h3>족자・회화</h3><p>서화, 근대 회화, 동양 미술</p></div>
+          <div class="card"><h3>현대 미술</h3><p>근현대 작품 및 컬렉션</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="access">
+      <div class="wrap">
+        <h2 class="section-title">Access</h2>
+        <p class="sub">구조역 3번 출구에서 도보 약 8분</p>
+        <div class="access-grid">
+          <img class="access-img" src="assets/access-kujo.jpg" alt="구조역에서 KOREAN ART까지의 지도">
+          <div class="info-box">
+            <h3>주식회사 KOREAN ART</h3>
+            <p>〒601-8023<br>京都府京都市南区東九条南松ノ木町24</p>
+            <p>교토시영 지하철 가라스마선<br>구조역 3번 출구에서 도보 약 8분</p>
+            <p>TEL：075-276-8189<br>MAIL：kabushikikaisyakoreanart@gmail.com</p>
+          </div>
+        </div>
+
+        <div class="route">
+          <div>
+            <h3>교토역에서 오시는 길</h3>
+            <p>교토역 → 지하철 가라스마선(다케다 방면) 약 2분 → 구조역 → 도보 약 8분</p>
+          </div>
+          <div>
+            <h3>간사이국제공항에서 오시는 길</h3>
+            <p>간사이국제공항 → JR 간쿠 특급 하루카 약 75분 → 교토역 → 구조역 → 도보 약 8분</p>
+          </div>
+        </div>
+
+        <div style="margin-top:40px;">
+          <img class="access-img" src="assets/access-kyoto-kix.jpg" alt="교토역 및 간사이국제공항에서 KOREAN ART까지의 교통 안내">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="wrap">
+      <div>
+        <div class="logo">KOREAN ART</div>
+        <p>주식회사 KOREAN ART</p>
+      </div>
+      <div>
+        <p>京都府京都市南区東九条南松ノ木町24</p>
+        <p>TEL：075-276-8189</p>
+        <p>MAIL：kabushikikaisyakoreanart@gmail.com</p>
+      </div>
+      <p class="small">Copyright © KOREAN ART. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
