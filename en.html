@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KOREAN ART | Antiques, Ceramics and Tea Utensils in Kyoto</title>
+  <meta name="description" content="KOREAN ART is a Kyoto-based gallery specializing in antiques, ceramics, tea utensils, hanging scrolls, paintings and modern and contemporary art." />
+  <style>
+
+  :root {
+    --black:#111;
+    --white:#fff;
+    --gray:#666;
+    --light:#f6f4ef;
+    --gold:#b79a5b;
+    --line:#ddd;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", "Times New Roman", serif;
+    color: var(--black);
+    background: var(--white);
+    line-height: 1.8;
+  }
+  a { color: inherit; text-decoration: none; }
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    background: rgba(255,255,255,.92);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(8px);
+  }
+  .nav {
+    max-width: 1180px;
+    margin: auto;
+    padding: 14px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  .logo {
+    font-size: 22px;
+    letter-spacing: .12em;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+  }
+  .menu {
+    display: flex;
+    gap: 24px;
+    font-size: 14px;
+    letter-spacing: .08em;
+  }
+  .languages {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: .04em;
+    white-space: nowrap;
+  }
+  .languages a {
+    color: #777;
+  }
+  .languages a.active {
+    color: var(--black);
+    font-weight: 700;
+  }
+  .languages .divider {
+    color: #bbb;
+  }
+  .hero {
+    min-height: 100vh;
+    background:
+      linear-gradient(rgba(0,0,0,.32), rgba(0,0,0,.32)),
+      url("assets/gallery.jpg") center/cover no-repeat;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 120px 22px 70px;
+  }
+  .hero-inner {
+    max-width: 1180px;
+    width: 100%;
+    margin: auto;
+  }
+  .hero h1 {
+    font-size: clamp(54px, 9vw, 118px);
+    line-height: .95;
+    letter-spacing: .08em;
+    margin: 0 0 28px;
+  }
+  .hero p {
+    font-size: clamp(16px, 2vw, 24px);
+    letter-spacing: .12em;
+    margin-bottom: 36px;
+  }
+  .btn {
+    display: inline-block;
+    border: 1px solid currentColor;
+    padding: 12px 28px;
+    letter-spacing: .12em;
+    font-size: 13px;
+  }
+  section {
+    padding: 96px 22px;
+  }
+  .wrap {
+    max-width: 1180px;
+    margin: auto;
+  }
+  .section-title {
+    font-size: 36px;
+    letter-spacing: .08em;
+    margin: 0 0 14px;
+  }
+  .sub {
+    color: var(--gray);
+    margin: 0 0 44px;
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .about-grid img,
+  .access-img {
+    width: 100%;
+    border-radius: 2px;
+    display: block;
+  }
+  .collections {
+    background: var(--light);
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+  .card {
+    background: white;
+    border: 1px solid var(--line);
+    padding: 36px 22px;
+    min-height: 160px;
+  }
+  .card h3 {
+    margin: 0 0 16px;
+    font-size: 24px;
+  }
+  .access-grid {
+    display: grid;
+    grid-template-columns: 1.35fr .9fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .info-box {
+    border-top: 1px solid var(--black);
+    border-bottom: 1px solid var(--line);
+    padding: 28px 0;
+  }
+  .info-box h3 {
+    margin: 0 0 18px;
+    font-size: 28px;
+    letter-spacing: .08em;
+  }
+  .route {
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+  footer {
+    background: #111;
+    color: white;
+    padding: 52px 22px;
+  }
+  footer .wrap {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  .small {
+    color: #aaa;
+    font-size: 13px;
+  }
+  @media (max-width: 900px) {
+    .nav { align-items: flex-start; }
+    .nav-right { flex-direction: column-reverse; align-items: flex-end; gap: 6px; }
+    .menu { gap: 14px; font-size: 12px; }
+  }
+  @media (max-width: 800px) {
+    .menu { display: none; }
+    .nav { padding: 12px 18px; }
+    .languages { font-size: 11px; gap: 6px; }
+    .about-grid,
+    .access-grid,
+    .route {
+      grid-template-columns: 1fr;
+    }
+    .cards {
+      grid-template-columns: 1fr 1fr;
+    }
+    section { padding: 70px 18px; }
+  }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="logo" href="en.html">KOREAN ART</a>
+      <div class="nav-right">
+        <nav class="menu">
+          <a href="#about">About</a>
+          <a href="#collection">Collection</a>
+          <a href="#access">Access</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="languages" aria-label="Language selection">
+          <a href="index.html">日本語</a><span class="divider">|</span><a class="active" href="en.html">EN</a><span class="divider">|</span><a href="zh.html">中文</a><span class="divider">|</span><a href="ko.html">한국어</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>KOREAN<br>ART</h1>
+        <p>ANTIQUES · CERAMICS · TEA UTENSILS · HANGING SCROLLS · PAINTINGS · MODERN & CONTEMPORARY ART</p>
+        <a class="btn" href="#collection">VIEW COLLECTION →</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap about-grid">
+        <div>
+          <h2 class="section-title">About</h2>
+          <p class="sub">A Kyoto-based gallery introducing Korean art and the beauty of East Asia.</p>
+          <p>KOREAN ART specializes in antiques, antique ceramics, tea utensils, hanging scrolls, paintings, and modern and contemporary art.<br>We carefully convey the appeal of each work and provide a trusted art experience for customers in Japan and abroad.</p>
+        </div>
+        <img src="assets/gallery.jpg" alt="KOREAN ART gallery interior">
+      </div>
+    </section>
+
+    <section id="collection" class="collections">
+      <div class="wrap">
+        <h2 class="section-title">Collection</h2>
+        <p class="sub">Areas of specialization</p>
+        <div class="cards">
+          <div class="card"><h3>Ceramics</h3><p>Antique ceramics, Goryeo celadon, white porcelain and more</p></div>
+          <div class="card"><h3>Tea Utensils</h3><p>Tea bowls, incense containers, flower vases and more</p></div>
+          <div class="card"><h3>Scrolls & Paintings</h3><p>Calligraphy, modern painting and East Asian art</p></div>
+          <div class="card"><h3>Contemporary Art</h3><p>Modern and contemporary works and collections</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="access">
+      <div class="wrap">
+        <h2 class="section-title">Access</h2>
+        <p class="sub">Approximately 8 minutes on foot from Exit 3 of Kujo Station</p>
+        <div class="access-grid">
+          <img class="access-img" src="assets/access-kujo.jpg" alt="Map from Kujo Station to KOREAN ART">
+          <div class="info-box">
+            <h3>KOREAN ART Co., Ltd.</h3>
+            <p>〒601-8023<br>京都府京都市南区東九条南松ノ木町24</p>
+            <p>Kyoto Municipal Subway Karasuma Line<br>Approx. 8 minutes on foot from Exit 3 of Kujo Station</p>
+            <p>TEL：075-276-8189<br>MAIL：kabushikikaisyakoreanart@gmail.com</p>
+          </div>
+        </div>
+
+        <div class="route">
+          <div>
+            <h3>From Kyoto Station</h3>
+            <p>Kyoto Station → Karasuma Subway Line toward Takeda (approx. 2 min.) → Kujo Station → approx. 8 min. on foot</p>
+          </div>
+          <div>
+            <h3>From Kansai International Airport</h3>
+            <p>Kansai International Airport → JR Haruka Limited Express (approx. 75 min.) → Kyoto Station → Kujo Station → approx. 8 min. on foot</p>
+          </div>
+        </div>
+
+        <div style="margin-top:40px;">
+          <img class="access-img" src="assets/access-kyoto-kix.jpg" alt="Access from Kyoto Station and Kansai International Airport">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="wrap">
+      <div>
+        <div class="logo">KOREAN ART</div>
+        <p>KOREAN ART Co., Ltd.</p>
+      </div>
+      <div>
+        <p>京都府京都市南区東九条南松ノ木町24</p>
+        <p>TEL：075-276-8189</p>
+        <p>MAIL：kabushikikaisyakoreanart@gmail.com</p>
+      </div>
+      <p class="small">Copyright © KOREAN ART. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
