@@ -52,6 +52,34 @@
       font-size: 14px;
       letter-spacing: .08em;
     }
+   .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.languages {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: .04em;
+  white-space: nowrap;
+}
+
+.languages a {
+  color: #777;
+}
+
+.languages a.active {
+  color: var(--black);
+  font-weight: 700;
+}
+
+.languages .divider {
+  color: #bbb;
+}
     .hero {
       min-height: 100vh;
       background:
@@ -186,12 +214,25 @@
   <header>
     <div class="nav">
       <a class="logo" href="#">KOREAN ART</a>
-      <nav class="menu">
+      
+<div class="nav-right">
+    <nav class="menu">
         <a href="#about">会社概要</a>
         <a href="#collection">芸術品展示</a>
         <a href="#access">アクセス</a>
         <a href="#contact">お問い合わせ</a>
-      </nav>
+    </nav>
+
+    <div class="languages">
+        <a href="index.html" class="active">日本語</a>
+        <span class="divider">|</span>
+        <a href="en.html">EN</a>
+        <span class="divider">|</span>
+        <a href="zh.html">中文</a>
+        <span class="divider">|</span>
+        <a href="ko.html">한국어</a>
+    </div>
+</div>
     </div>
   </header>
 
